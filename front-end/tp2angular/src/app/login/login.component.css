@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .vh-100 {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .divider:after,
+  .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+  }
+  
+  .h-custom {
+    height: 100%;
+    background-image: url('https://th.bing.com/th/id/R.96c3b46ab31631ac18a56a9bdb54f660?rik=lv37mL2X4gSaRw&pid=ImgRaw&r=0');
+    background-size: cover;
+  }
+  
+  @media (max-width: 450px) {
+    .h-custom {
+      height: 100%;
+    }
+  }
+  .p-sign-in {
+    color: #fff; /* White color */
+    font-size: 1.5rem; /* Adjust font size as needed */
+    /* Add any other styles you want */
+  }
+  
+ 
+  

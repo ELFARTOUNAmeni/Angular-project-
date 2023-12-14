@@ -1,0 +1,53 @@
+<br><br><br><br><br>
+<div class="card" >
+  <div class="card-body p-5 shadow-5 text-center">
+    <h2 class="fw-bold mb-5">Sign up now</h2>
+    <form #signupForm="ngForm" (ngSubmit)="save()">
+      <!-- 2 column grid layout with text inputs for the first and last names -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="form-outline">
+            <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" id="firstname" placeholder="First name" required />
+            <div *ngIf="signupForm.controls['firstname']?.invalid && signupForm.controls['firstname']?.touched" class="text-danger">
+              First name is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="form-outline">
+            <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control" id="lastname" placeholder="Last name" required />
+            <div *ngIf="signupForm.controls['lastname']?.invalid && signupForm.controls['lastname']?.touched" class="text-danger">
+              Last name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder="Email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" />
+        <div *ngIf="signupForm.controls['email']?.invalid && signupForm.controls['email']?.touched" class="text-danger">
+          Enter a valid email address.
+        </div>
+      </div>
+      <div class="form-outline mb-4">
+        <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone number" required />
+        <div *ngIf="signupForm.controls['phoneNumber']?.invalid && signupForm.controls['phoneNumber']?.touched" class="text-danger">
+          Phone number is required.
+        </div>
+      </div>
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
+        <div *ngIf="signupForm.controls['password']?.invalid && signupForm.controls['password']?.touched" class="text-danger">
+          Password must be at least 8 characters and contain at least one lowercase letter, one uppercase letter, one digit, and one special character.
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!signupForm.valid">
+        Sign up
+      </button>
+
+    </form>
+  </div>
+</div>
